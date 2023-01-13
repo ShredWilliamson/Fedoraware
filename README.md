@@ -58,11 +58,10 @@
   - [SylveonBottle](https://github.com/SylveonBottle)
   - [NotAnUser1](https://github.com/NotAnUser1)
   - [VOID-Nightmare](https://github.com/VOID-Nightmare)
-  - Fourteen
+  - Fourteen (https://cdn.discordapp.com/attachments/920026499174776863/1063425103511158794/14_spergout.mp4)
   - [vicinity-gush8](https://github.com/vicinity-gush8)
   - [XJN2](https://github.com/XJN2)
   - [hivec2](https://github.com/hivec2)
   - [wsock](https://github.com/wsock)
   - [hyperventilation](https://github.com/hyperventilation)
-  - [frel0](https://github.com/frel0)
   - [stax](https://github.com/stax132349)
