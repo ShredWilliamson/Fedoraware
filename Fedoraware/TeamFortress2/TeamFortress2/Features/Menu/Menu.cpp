@@ -1734,41 +1734,41 @@ void CMenu::MenuMisc()
 			{
 				WToggle("Only on movement key", &Vars::Misc::DirectionalOnlyOnMove.Value); HelpMarker("This makes it so that you dont always go forward if u just hold space");
 			}
-			WToggle("Edge jump", &Vars::Misc::EdgeJump.Value); HelpMarker("Will jump at the very end of whatever platform you're on, allowing you to perfectly make longer jumps.");
-			if (Vars::Misc::EdgeJump.Value)
+			//WToggle("Edge jump", &Vars::Misc::EdgeJump.Value); HelpMarker("Will jump at the very end of whatever platform you're on, allowing you to perfectly make longer jumps.");
+			//if (Vars::Misc::EdgeJump.Value)
 			{
-				InputKeybind("Edge jump key", Vars::Misc::EdgeJumpKey, true);  HelpMarker("Edge jump bind, leave as None for always on");
+				//InputKeybind("Edge jump key", Vars::Misc::EdgeJumpKey, true);  HelpMarker("Edge jump bind, leave as None for always on");
 			}
 
 
 			SectionTitle("Automation");
 			InputKeybind("Infinite Sandwich key", Vars::Misc::InfiniteEatKey, true);  HelpMarker("Glutton bind, none for off.");
-			InputKeybind("Sticky Spam key", Vars::Misc::StickySpamKey, true);  HelpMarker("Sticky Spam Bind, none for off.");
-			if (Vars::Misc::StickySpamKey.Value) {
-				WSlider("Sticky Charge Percent", &Vars::Misc::StickyChargePercent.Value, 0, 100, "%d", ImGuiSliderFlags_AlwaysClamp | ImGuiSliderFlags_ClampOnInput);
+			//InputKeybind("Sticky Spam key", Vars::Misc::StickySpamKey, true);  HelpMarker("Sticky Spam Bind, none for off.");
+			//if (Vars::Misc::StickySpamKey.Value) {
+				//WSlider("Sticky Charge Percent", &Vars::Misc::StickyChargePercent.Value, 0, 100, "%d", ImGuiSliderFlags_AlwaysClamp | ImGuiSliderFlags_ClampOnInput);
 			}
 			WToggle("Auto rocket jump", &Vars::Misc::AutoRocketJump.Value); HelpMarker("Will rocket jump at the angle you're looking at when you press RMB with a rocket launcher");
 			if (Vars::Misc::AutoRocketJump.Value)
 			{
 				WToggle("Non Lethal Rocket Jump", &Vars::Misc::NonLethalRocketJump.Value);
 			}
-			WToggle("Auto FaN jump", &Vars::Misc::AutoScoutJump.Value); HelpMarker("Performs an FaN jump when pressing RMB");
+			//WToggle("Auto FaN jump", &Vars::Misc::AutoScoutJump.Value); HelpMarker("Performs an FaN jump when pressing RMB");
 			WToggle("Anti-AFK", &Vars::Misc::AntiAFK.Value); HelpMarker("Will make you jump every now and then so you don't get kicked for idling");
 			WToggle("Auto Vote", &Vars::Misc::AutoVote.Value); HelpMarker("Automatically votes yes/no depending on the target");
 			WToggle("Taunt slide", &Vars::Misc::TauntSlide.Value); HelpMarker("Allows you to input in taunts");
 			WToggle("Taunt control", &Vars::Misc::TauntControl.Value); HelpMarker("Gives full control if enabled with taunt slide");
-			WToggle("Taunt follows camera", &Vars::Misc::TauntFollowsCamera.Value);
-			WToggle("Taunt spin", &Vars::Misc::TauntSpin.Value);
+			//WToggle("Taunt follows camera", &Vars::Misc::TauntFollowsCamera.Value);
+			WToggle("Taunt spin", &Vars::Misc::TauntSpin.Value); HelpMarker("You spin me right 'round, baby, right 'round Like a record, baby, right 'round, 'round, 'round");
 			InputKeybind("Taunt spin key", Vars::Misc::TauntSpinKey, false);
 			WSlider("Taunt spin speed", &Vars::Misc::TauntSpinSpeed.Value, 0.1f, 100.f, "%.2f", ImGuiSliderFlags_AlwaysClamp | ImGuiSliderFlags_ClampOnInput);
 
-			WCombo("Pick Class", &Vars::Misc::AutoJoin.Value, { "Off", "Scout", "Soldier", "Pyro", "Demoman", "Heavy", "Engineer", "Medic", "Sniper", "Spy" }); HelpMarker("Automatically joins the given class");
-			WToggle("Rage retry", &Vars::Misc::RageRetry.Value); HelpMarker("Will automatically reconnect when your health is low");
-			if (Vars::Misc::RageRetry.Value)
+			//WCombo("Pick Class", &Vars::Misc::AutoJoin.Value, { "Off", "Scout", "Soldier", "Pyro", "Demoman", "Heavy", "Engineer", "Medic", "Sniper", "Spy" }); HelpMarker("Automatically joins the given class");
+			//WToggle("Rage retry", &Vars::Misc::RageRetry.Value); HelpMarker("Will automatically reconnect when your health is low");
+			//if (Vars::Misc::RageRetry.Value)
 			{
-				WSlider("Rage Retry health", &Vars::Misc::RageRetryHealth.Value, 1, 99, "%d%%"); HelpMarker("Minimum health percentage that will cause a retry");
+				//WSlider("Rage Retry health", &Vars::Misc::RageRetryHealth.Value, 1, 99, "%d%%"); HelpMarker("Minimum health percentage that will cause a retry");
 			}
-			WToggle("Pseudo Spectator", &Vars::Misc::ExtendFreeze.Value); HelpMarker("Causes an infinite respawn/spectator time");
+			//WToggle("Pseudo Spectator", &Vars::Misc::ExtendFreeze.Value); HelpMarker("Causes an infinite respawn/spectator time");
 			WToggle("Auto accept item drops", &Vars::Misc::AutoAcceptItemDrops.Value); HelpMarker("Automatically accepts all item drops");
 
 			SectionTitle("Queueing");
@@ -1779,9 +1779,9 @@ void CMenu::MenuMisc()
 					   &Vars::Misc::RegionsAllowed.Value,
 					   "Regions"
 			);
-			WCombo("Match accept notification", &Vars::Misc::InstantAccept.Value, { "Default", "Instant join", "Freeze timer" }); HelpMarker("Will skip the 10 second delay before joining a match or let you never join");
-			WCombo("Auto casual queue", &Vars::Misc::AutoCasualQueue.Value, { "Off", "In menu", "Always" }); HelpMarker("Automatically starts queueuing for casual");
-			WToggle("Auto VAC Join", &Vars::Misc::AntiVAC.Value); HelpMarker("Tries to join a server while having a VAC ban");
+			WCombo("Auto Accept Match", &Vars::Misc::InstantAccept.Value, { "Instant join" }); HelpMarker("Instantly joins a match");
+			//WCombo("Auto casual queue", &Vars::Misc::AutoCasualQueue.Value, { "Off", "In menu", "Always" }); HelpMarker("Automatically starts queueuing for casual");
+			//WToggle("Auto VAC Join", &Vars::Misc::AntiVAC.Value); HelpMarker("Tries to join a server while having a VAC ban");
 
 			SectionTitle("Sound");
 			MultiFlags({ "Footsteps", "Noisemaker" }, { 1 << 0, 1 << 1 }, &Vars::Misc::SoundBlock.Value, "Block Sounds###SoundRemovals");
@@ -1823,16 +1823,16 @@ void CMenu::MenuMisc()
 			SectionTitle("Chat");
 
 			WToggle("Chat Flags", &Vars::Misc::ChatFlags.Value); HelpMarker("Adds advanced prefixes to chat messages");
-			WToggle("Runescape chat", &Vars::Misc::RunescapeChat.Value); HelpMarker("Draws text on top of peoples heads when they type like in runescape (wholesome)");
-			WCombo("Chat spam", &Vars::Misc::ChatSpam.Value, { "Off", "Fedoraware", "Lmaobox", "Cathook" });
-			WCombo("Voicechat spam", &Vars::Misc::VoicechatSpam.Value, { "Off", "Medic!", "Help!", "Nice Shot", "Random" });
-			WSlider("Spam interval", &Vars::Misc::SpamInterval.Value, 0.1f, 10.f, "%.1f"); HelpMarker("How often chat/voice spam should run");
-			WCombo("Mediaval Mode", &Vars::Misc::MedievalChat.Value, { "Default", "Never", "Always" }); HelpMarker("By the Immeasurable Nether Regions of Enlightened Dionysus, this enableth medieval chattery. Anon!");
+			//WToggle("Runescape chat", &Vars::Misc::RunescapeChat.Value); HelpMarker("Draws text on top of peoples heads when they type like in runescape (wholesome)");
+			//WCombo("Chat spam", &Vars::Misc::ChatSpam.Value, { "Off", "Fedoraware", "Lmaobox", "Cathook" });
+			//WCombo("Voicechat spam", &Vars::Misc::VoicechatSpam.Value, { "Off", "Medic!", "Help!", "Nice Shot", "Random" });
+			//WSlider("Spam interval", &Vars::Misc::SpamInterval.Value, 0.1f, 10.f, "%.1f"); HelpMarker("How often chat/voice spam should run");
+			//WCombo("Mediaval Mode", &Vars::Misc::MedievalChat.Value, { "Default", "Never", "Always" }); HelpMarker("By the Immeasurable Nether Regions of Enlightened Dionysus, this enableth medieval chattery. Anon!");
 
 			SectionTitle("Exploits");
 			WToggle("Anti Autobalance", &Vars::Misc::AntiAutobal.Value); HelpMarker("Prevents auto balance by reconnecting to the server");
 			WToggle("sv_cheats Bypass", &Vars::Misc::CheatsBypass.Value); HelpMarker("Allows you to use some sv_cheats commands (clientside)");
-			WToggle("Join spam", &Vars::Misc::JoinSpam.Value); HelpMarker("Spams join/disconnect messages in the chat");
+			//WToggle("Join spam", &Vars::Misc::JoinSpam.Value); HelpMarker("Spams join/disconnect messages in the chat");
 			WToggle("Noisemaker Spam", &Vars::Misc::NoisemakerSpam.Value); HelpMarker("Spams the noisemaker without reducing it's charges");
 			WToggle("Ping reducer", &Vars::Misc::PingReducer.Value); HelpMarker("Reduces your ping on the scoreboard");
 			if (Vars::Misc::PingReducer.Value)
@@ -1840,16 +1840,16 @@ void CMenu::MenuMisc()
 				WSlider("Target ping", &Vars::Misc::PingTarget.Value, 0, 200); HelpMarker("Target ping that should be reached");
 			}
 
-			SectionTitle("Party Networking");
-			WToggle("Enable###PartyNetEnable", &Vars::Misc::PartyNetworking.Value); HelpMarker("Enables party networking between Fedoraware users");
-			WToggle("Party crasher###PartyNetCrash", &Vars::Misc::PartyCrasher.Value); HelpMarker("Annoy your friends by crashing their game");
-			InputKeybind("Party marker", Vars::Misc::PartyMarker, true);  HelpMarker("Sends a marker to other Fedoraware users in your party");
-			WToggle("Party ESP###PartyNetESP", &Vars::Misc::PartyESP.Value); HelpMarker("Sends player locations to your party members");
+			//SectionTitle("Party Networking");
+			//WToggle("Enable###PartyNetEnable", &Vars::Misc::PartyNetworking.Value); HelpMarker("Enables party networking between Fedoraware users");
+			//WToggle("Party crasher###PartyNetCrash", &Vars::Misc::PartyCrasher.Value); HelpMarker("Annoy your friends by crashing their game");
+			//InputKeybind("Party marker", Vars::Misc::PartyMarker, true);  HelpMarker("Sends a marker to other Fedoraware users in your party");
+			//WToggle("Party ESP###PartyNetESP", &Vars::Misc::PartyESP.Value); HelpMarker("Sends player locations to your party members");
 
-			SectionTitle("Followbot");
-			WToggle("Enable Followbot###FollowbotEnable", &Vars::Misc::Followbot::Enabled.Value); HelpMarker("Follows a player around.");
-			WToggle("Friends only###FollowbotFriends", &Vars::Misc::Followbot::FriendsOnly.Value); HelpMarker("Only follow friends");
-			WSlider("Follow Distance###FollowbotDistance", &Vars::Misc::Followbot::Distance.Value, 50.f, 400.f, "%.0f"); HelpMarker("How close we should follow the target");
+			//SectionTitle("Followbot");
+			//WToggle("Enable Followbot###FollowbotEnable", &Vars::Misc::Followbot::Enabled.Value); HelpMarker("Follows a player around.");
+			//WToggle("Friends only###FollowbotFriends", &Vars::Misc::Followbot::FriendsOnly.Value); HelpMarker("Only follow friends");
+			//WSlider("Follow Distance###FollowbotDistance", &Vars::Misc::Followbot::Distance.Value, 50.f, 400.f, "%.0f"); HelpMarker("How close we should follow the target");
 
 			/*SectionTitle("Leaderboard");
 			WToggle("Send statistics", &Vars::Misc::StoreStatistics.Value); HelpMarker("Will send your steamid/kills/deaths/highest killstreak whenever you leave the server");
@@ -1893,26 +1893,26 @@ void CMenu::MenuMisc()
 				I::EngineClient->ClientCmd_Unrestricted("stopsound");
 			if (Button("Status", ImVec2(btnWidth, 20)))
 				I::EngineClient->ClientCmd_Unrestricted("status");
-			if (Button("Ping", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("ping");
-			if (Button("Pong", ImVec2(btnWidth, 20)))
-				F::Pong.IsOpen = !F::Pong.IsOpen;
-			if (Button("Retry", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("retry");
-			if (Button("Exit", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("exit");
+			//if (Button("Ping", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("ping");
+			//if (Button("Pong", ImVec2(btnWidth, 20)))
+				//F::Pong.IsOpen = !F::Pong.IsOpen;
+			//if (Button("Retry", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("retry");
+			//if (Button("Exit", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("exit");
 			if (Button("Console", ImVec2(btnWidth, 20)))
 				I::EngineClient->ClientCmd_Unrestricted("showconsole");
-			if (Button("Demo playback", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("demoui");
-			if (Button("Demo trackbar", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("demoui2");
-			if (Button("Itemtest", ImVec2(btnWidth, 20)))
-				I::EngineClient->ClientCmd_Unrestricted("itemtest");
-			if (Button("Fix Chams", ImVec2(btnWidth, 20)))
+			//if (Button("Demo playback", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("demoui");
+			//if (Button("Demo trackbar", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("demoui2");
+			//if (Button("Itemtest", ImVec2(btnWidth, 20)))
+				//I::EngineClient->ClientCmd_Unrestricted("itemtest");
+			//if (Button("Fix Chams", ImVec2(btnWidth, 20)))
 			{
-				F::DMEChams.CreateMaterials();
-				F::Glow.CreateMaterials();
+				//F::DMEChams.CreateMaterials();
+				//F::Glow.CreateMaterials();
 			}
 			//if (Button("CPrint", ImVec2(btnWidth, 20))){
 			//	I::CenterPrint->Print((char*)"niggaz");
